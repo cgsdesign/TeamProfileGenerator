@@ -1,7 +1,5 @@
 const Employee = require('../lib/Employee.js')//import employee
-//const { TestScheduler } = require('jest')
 
-//jest.mock('../lib/Employee');//once made overwrites with fake data. if this function works, the tests wont fail just for testing
 
 test('create an employee object', () =>{
     const employee = new Employee ('Dan','1192', "cat@email",'Manager',657465465)
