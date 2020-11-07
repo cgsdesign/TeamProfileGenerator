@@ -1,19 +1,39 @@
-const Employee = require('../lib/Player')
-const { TestScheduler } = require('jest')
+const Employee = require('../lib/Employee.js')//import employee
+//const { TestScheduler } = require('jest')
 
-const Potion = require('../lib/Potion');//imports potion constructor
+//jest.mock('../lib/Employee');//once made overwrites with fake data. if this function works, the tests wont fail just for testing
 
-jest.mock('../lib/Potion');//overwrites the potions with fake data so even if potions breaks, if this function works, the tests wont fail just for testing
-
-
-test('create a player object', ()=>{
-    const player =new Player ('Dave')
-    expect(player.name).toBe('Dave')
-    expect(player.health).toEqual(expect.any(Number))
-    expect(player.strength).toEqual(expect.any(Number))
-    expect(player.agility).toEqual(expect.any(Number))
-    
-    expect(player.inventory).toEqual(
-        expect.arrayContaining([expect.any(Object)])
-    )
+test('create an employee object', () =>{
+    const employee = new Employee ('Dan')
+    expect(employee.name).toBe('Dan')
+    expect(employee.id).toEqual(expect.any(Object))
+    expect(employee.email).toEqual(expect.any(Object))
+    expect(employee.roll).toEqual(expect.any(Object))
     })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//     //concatination by default
+//   test('gets a description of the enemy', () => {
+//     const enemy = new Enemy('goblin', 'sword');
+  
+//     expect(enemy.getDescription()).toEqual(expect.stringContaining('goblin'));
+//     expect(enemy.getDescription()).toEqual(expect.stringContaining('sword'));
+//   });

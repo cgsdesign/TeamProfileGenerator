@@ -6,10 +6,15 @@
 
 //now unit testing in relation to mocks for interview questions
 
-//!! dont create arrow methods in your object becasue it will mess up "this."
+//!! be carefun with create arrow methods in your object becasue it will mess up "this."
 //oop is noce becasue keeps objects from messing with other's code
 //if you want to add new properties to a class ex new catagory or functions constructor- use prototype.(new factor)
 // prototypes add methors to existing constructors (think engeratance)
 //toBe is a specific value, expect."" is of a type
+//for challenge - inquier, unit 6, jest testing
 
-//for challenge - inquier, unit 6 , jest testing
+// generatePage()
+// generateAllEmployees()
+// generateEmployee()
+// processEmployees()
+// collectData()
