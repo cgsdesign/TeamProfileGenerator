@@ -1,4 +1,4 @@
-// npm init to create package.json
+const Employee = require('../lib/Employee.js')// npm init to create package.json
 //to add .gitignore - conand line: touch .gitignore
 // npm install inquirer to get the node_modules and package-lock.son (see 9.3.4 for details)
 //npm run test to run test - note make have to reinstal jest while in this file. 
@@ -18,3 +18,30 @@
 // generateEmployee()
 // processEmployees()
 // collectData()
+
+const collectDataPrimary = () => {
+    return inquirer.prompt([
+      {
+        type: 'input',
+        name: 'name',
+        message: 'What is the employee name?'
+      },
+      {
+        type: 'input',
+        name: 'id',
+        message: 'What is the employee ID?'
+      },
+      {
+        type: 'input',
+        name: 'email',
+        message: 'What is the employee email?'
+      },
+      {
+        type: 'checkbox',
+        name: 'role',
+        choices: ['Manager', 'Intern', 'Engineer']
+      }
+    ]);
+    console.log(inquirer.prompt)
+  };
+collectDataPrimary()
