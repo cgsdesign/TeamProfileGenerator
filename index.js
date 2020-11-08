@@ -47,9 +47,141 @@ const finishToPage = function(){
 
 }
 
+const makeManager = function() {
+
+    return inquirer.prompt([
+      {
+        type: 'input',
+        name: 'name',
+        message: 'What is the manager name?',
+        validate: descriptionInput => {
+            if (descriptionInput) {
+              return true;
+            } else {
+              console.log('Please enter name');
+              return false;
+            }
+          }
+      },
+      {
+        type: 'input',
+        name: 'id',
+        message: 'What is the employee ID?',
+        validate: descriptionInput => {
+            if (descriptionInput) {
+              return true;
+            } else {
+              console.log('Please enter id');
+              return false;
+            }
+          }
+      },
+      {
+        type: 'input',
+        name: 'email',
+        message: 'What is the employee email?',
+        validate: descriptionInput => {
+            if (descriptionInput) {
+              return true;
+            } else {
+              console.log('Please enter email');
+              return false;
+            }
+          }
+      },
+      {
+        type: 'input',
+        name: 'officeNumber',
+        message: 'What is the manager office number?',
+        validate: descriptionInput => {
+            if (descriptionInput) {
+              return true;
+            } else {
+              console.log('Please enter office number');
+              return false;
+            }
+          }
+      }
+    ])
+    .then(({name,id,email,officeNumber}) => {
+        this.manager = new Engineer(name,id,email,officeNumber)
+        console.log(this.manager)
+        //push
+        //prompt want to make another employee?
+        finishToPage()
+    }) 
+  };
 
 
 
+
+//make intern
+const makeIntern = function() {
+
+    return inquirer.prompt([
+      {
+        type: 'input',
+        name: 'name',
+        message: 'What is the intern name?',
+        validate: descriptionInput => {
+            if (descriptionInput) {
+              return true;
+            } else {
+              console.log('Please enter name');
+              return false;
+            }
+          }
+      },
+      {
+        type: 'input',
+        name: 'id',
+        message: 'What is the employee ID?',
+        validate: descriptionInput => {
+            if (descriptionInput) {
+              return true;
+            } else {
+              console.log('Please enter id');
+              return false;
+            }
+          }
+      },
+      {
+        type: 'input',
+        name: 'email',
+        message: 'What is the employee email?',
+        validate: descriptionInput => {
+            if (descriptionInput) {
+              return true;
+            } else {
+              console.log('Please enter email');
+              return false;
+            }
+          }
+      },
+      {
+        type: 'input',
+        name: 'school',
+        message: 'What is the employee school?',
+        validate: descriptionInput => {
+            if (descriptionInput) {
+              return true;
+            } else {
+              console.log('Please enter school name');
+              return false;
+            }
+          }
+      }
+    ])
+    .then(({name,id,email,school}) => {
+        this.intern = new Intern(name,id,email,school)
+        console.log(this.school)
+        //push
+        //prompt want to make another employee?
+        finishToPage()
+    }) 
+  };
+
+//make engineer
 const makeEngineer = function() {
 
     return inquirer.prompt([
@@ -109,7 +241,7 @@ const makeEngineer = function() {
     .then(({name,id,email,github}) => {
         this.engineer = new Engineer(name,id,email,github)
         console.log(this.engineer)
-        //push
+        //push - to be built
         //prompt want to make anothr employee?
         finishToPage()
     }) 
@@ -133,14 +265,15 @@ const makeEngineer = function() {
                   }
     
             })
-            //destructure name for responseto insert into code
             //NOTE!!! below I have to use => because .then(function({name}) would create a new scope so the current enemy consol log wont work
             .then(({role}) => {
                 if (role === 'Manager') {
-                       console.log('you selected manager')        
+                       console.log('you selected manager')   
+                       makeManager()     
                 }
                 else if (role === 'Intern'){
                     console.log('you selected intern')
+                    makeIntern()
                 }
                 else {
                     console.log('you selected engineer')
