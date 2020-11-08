@@ -3,6 +3,8 @@ const Manager = require('./lib/Manager.js')
 const Intern = require('./lib/Intern.js')
 const render = require("./lib/renderTemp");
 const inquirer = require('inquirer');
+const generatePage = require('./src/page-template');
+const { writeFile, copyFile } = require('./util/generate-site');
 const fs = require('fs');
 
 //const {writeFile} = require('./src/create-info');//MANDITORY to link file
@@ -19,12 +21,6 @@ const fs = require('fs');
 // prototypes add methors to existing constructors (think engeratance)
 //toBe is a specific value, expect."" is of a type
 //for challenge - inquier, unit 6, jest testing
-
-// generatePage()
-// generateAllEmployees()
-// generateEmployee()
-// processEmployees()
-// collectDataPrimary()
 
 //THE TEAM
 let teamARR = []
@@ -188,7 +184,7 @@ const makeEngineer = function() {
                 }
                 else {
                     console.log('you selected engineer')
-                    makeEngineer()
+                    makeIntern()
                 }
             }) 
     }
@@ -211,8 +207,10 @@ const makeEngineer = function() {
             }
             else{
                 console.log ("page is generating")
-                render(teamARR)//fakerendering to test if array is pushed
-                //run function to make page
+                console.log (teamARR)
+                copyFile(writeFile(generatePage(teamARR)))//Note, make more modular if have time using promises
+                console.log('_______________________________________________________')
+                console.log('file should be written')
                 return
             }
         })
@@ -279,7 +277,6 @@ const makeEngineer = function() {
             let manager = new Manager(name,id,email,officeNumber)
             console.log(manager)
             teamARR.push(manager)//push employee to array
-            //push
             //prompt want to make another employee?
             finishToPage()
         }) 
