@@ -1,6 +1,7 @@
 const Engineer = require('./lib/Engineer.js')
 const Manager = require('./lib/Manager.js')
 const Intern = require('./lib/Intern.js')
+const render = require("./lib/renderTemp");
 const inquirer = require('inquirer');
 const fs = require('fs');
 
@@ -24,94 +25,9 @@ const fs = require('fs');
 // generateEmployee()
 // processEmployees()
 // collectDataPrimary()
-const finishToPage = function(){
-    inquirer
-    .prompt({
-        type: 'confirm',
-        name: 'newEp',
-        message: 'Do you want to add another employee? y/N',
-        default: true
 
-    })
-    .then(({newEp}) => {
-        if (newEp == true) {
-            console.log( 'answered true')
-            makeEmployee()
-            return
-        }
-        else{
-            console.log ("page is generating")
-            return
-        }
-    })
-
-}
-
-const makeManager = function() {
-
-    return inquirer.prompt([
-      {
-        type: 'input',
-        name: 'name',
-        message: 'What is the manager name?',
-        validate: descriptionInput => {
-            if (descriptionInput) {
-              return true;
-            } else {
-              console.log('Please enter name');
-              return false;
-            }
-          }
-      },
-      {
-        type: 'input',
-        name: 'id',
-        message: 'What is the employee ID?',
-        validate: descriptionInput => {
-            if (descriptionInput) {
-              return true;
-            } else {
-              console.log('Please enter id');
-              return false;
-            }
-          }
-      },
-      {
-        type: 'input',
-        name: 'email',
-        message: 'What is the employee email?',
-        validate: descriptionInput => {
-            if (descriptionInput) {
-              return true;
-            } else {
-              console.log('Please enter email');
-              return false;
-            }
-          }
-      },
-      {
-        type: 'input',
-        name: 'officeNumber',
-        message: 'What is the manager office number?',
-        validate: descriptionInput => {
-            if (descriptionInput) {
-              return true;
-            } else {
-              console.log('Please enter office number');
-              return false;
-            }
-          }
-      }
-    ])
-    .then(({name,id,email,officeNumber}) => {
-        this.manager = new Engineer(name,id,email,officeNumber)
-        console.log(this.manager)
-        //push
-        //prompt want to make another employee?
-        finishToPage()
-    }) 
-  };
-
+//THE TEAM
+let teamARR = []
 
 
 
@@ -173,10 +89,9 @@ const makeIntern = function() {
       }
     ])
     .then(({name,id,email,school}) => {
-        this.intern = new Intern(name,id,email,school)
-        console.log(this.school)
-        //push
-        //prompt want to make another employee?
+        let intern = new Intern(name,id,email,school)
+
+        teamARR.push(intern)//push employee to array
         finishToPage()
     }) 
   };
@@ -239,10 +154,9 @@ const makeEngineer = function() {
       }
     ])
     .then(({name,id,email,github}) => {
-        this.engineer = new Engineer(name,id,email,github)
-        console.log(this.engineer)
-        //push - to be built
-        //prompt want to make anothr employee?
+        let engineer = new Engineer(name,id,email,github)
+
+        teamARR.push(engineer)//push employee to array
         finishToPage()
     }) 
   };
@@ -254,7 +168,7 @@ const makeEngineer = function() {
                 type: 'checkbox',
                 name: 'role',
                 message: 'What is the employee role?',
-                choices: ['Manager', 'Intern', 'Engineer'],
+                choices: ['Intern', 'Engineer'],
                 validate: descriptionInput => {
                     if (descriptionInput) {
                       return true;
@@ -265,13 +179,10 @@ const makeEngineer = function() {
                   }
     
             })
-            //NOTE!!! below I have to use => because .then(function({name}) would create a new scope so the current enemy consol log wont work
+            //NOTE!!! below used => because .then(function({name}) would create a new scope so the current enemy consol log wont work
             .then(({role}) => {
-                if (role === 'Manager') {
-                       console.log('you selected manager')   
-                       makeManager()     
-                }
-                else if (role === 'Intern'){
+
+                if (role === 'Intern'){
                     console.log('you selected intern')
                     makeIntern()
                 }
@@ -279,11 +190,103 @@ const makeEngineer = function() {
                     console.log('you selected engineer')
                     makeEngineer()
                 }
-            })
-            //test object creation      
+            }) 
+    }
+
+    //check if another employee or push to render
+    const finishToPage = function(){
+        inquirer
+        .prompt({
+            type: 'confirm',
+            name: 'newEp',
+            message: 'Do you want to add another employee? y/N',
+            default: true
+    
+        })
+        .then(({newEp}) => {
+            if (newEp == true) {
+                console.log( 'answered true')
+                makeEmployee()
+                return
+            }
+            else{
+                console.log ("page is generating")
+                render(teamARR)//fakerendering to test if array is pushed
+                //run function to make page
+                return
+            }
+        })
     
     }
 
-makeEmployee()
+    //Make Manager
+    const makeManager = function() {
+        return inquirer.prompt([
+          {
+            type: 'input',
+            name: 'name',
+            message: 'What is the manager name?',
+            validate: descriptionInput => {
+                if (descriptionInput) {
+                  return true;
+                } else {
+                  console.log('Please enter name');
+                  return false;
+                }
+              }
+          },
+          {
+            type: 'input',
+            name: 'id',
+            message: 'What is the employee ID?',
+            validate: descriptionInput => {
+                if (descriptionInput) {
+                  return true;
+                } else {
+                  console.log('Please enter id');
+                  return false;
+                }
+              }
+          },
+          {
+            type: 'input',
+            name: 'email',
+            message: 'What is the employee email?',
+            validate: descriptionInput => {
+                if (descriptionInput) {
+                  return true;
+                } else {
+                  console.log('Please enter email');
+                  return false;
+                }
+              }
+          },
+          {
+            type: 'input',
+            name: 'officeNumber',
+            message: 'What is the manager office number?',
+            validate: descriptionInput => {
+                if (descriptionInput) {
+                  return true;
+                } else {
+                  console.log('Please enter office number');
+                  return false;
+                }
+              }
+          }
+        ])
+        .then(({name,id,email,officeNumber}) => {
+            let manager = new Manager(name,id,email,officeNumber)
+            console.log(manager)
+            teamARR.push(manager)//push employee to array
+            //push
+            //prompt want to make another employee?
+            finishToPage()
+        }) 
+      };
+    
+    
+    
+makeManager()
 //   .then((data) => {
 //     writeFile(data)})

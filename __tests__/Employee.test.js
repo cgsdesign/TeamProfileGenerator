@@ -6,7 +6,7 @@ test('create an employee object', () =>{
     expect(employee.name).toBe('Dan')
     expect(employee.id).toBeDefined()
     expect(employee.email).toBeDefined()
-    expect(employee.role).toBeDefined()
+    expect(employee.getRole).toBeDefined()
     })
 
 
