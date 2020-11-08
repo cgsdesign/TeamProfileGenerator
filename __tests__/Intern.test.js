@@ -6,3 +6,9 @@ test('import employees to intern', () => {
     expect(intern.name).toBeDefined()
 }
 )
+
+test('test for school', () => {
+    let intern = new Intern('Koy', 'A4325', 'v@koy', 'MoonAcademy')
+    expect(intern.school).toBeDefined()
+
+})
