@@ -24,90 +24,132 @@ const fs = require('fs');
 // generateEmployee()
 // processEmployees()
 // collectDataPrimary()
-
-const makeEmployee = function() {
-//ask for employee job
+const finishToPage = function(){
     inquirer
-        .prompt({
-            type: 'checkbox',
-            name: 'role',
-            choices: ['Manager', 'Intern', 'Engineer'],
-            validate: descriptionInput => {
-                if (descriptionInput) {
-                  return true;
-                } else {
-                  console.log('Please enter role');
-                  return false;
-                }
-              }
+    .prompt({
+        type: 'confirm',
+        name: 'newEp',
+        message: 'Do you want to add another employee? y/N',
+        default: true
 
-        })
-        //destructure name for responseto insert into code
-        //NOTE!!! below I have to use => because .then(function({name}) would create a new scope so the current enemy consol log wont work
-        .then(({role}) => {
-            if (role === 'Manager') {
-                   console.log('selected manager')        
-            }
-            else if (role === 'Intern'){
-                console.log('selected intern')
-            }
-            else {
-                console.log('selected engineer')
-            }
-        })
-        //test object creation      
+    })
+    .then(({newEp}) => {
+        if (newEp == true) {
+            console.log( 'answered true')
+            makeEmployee()
+            return
+        }
+        else{
+            console.log ("page is generating")
+            return
+        }
+    })
 
 }
 
 
 
-// const Engineer = () => {
-//     console.log(
-//     "==========prompt employee information=========="
-//     )
-//     return inquirer.prompt([
-//       {
-//         type: 'input',
-//         name: 'name',
-//         message: 'What is the employee name?',
-//         validate: descriptionInput => {
-//             if (descriptionInput) {
-//               return true;
-//             } else {
-//               console.log('Please enter name');
-//               return false;
-//             }
-//           }
-//       },
-//       {
-//         type: 'input',
-//         name: 'id',
-//         message: 'What is the employee ID?',
-//         validate: descriptionInput => {
-//             if (descriptionInput) {
-//               return true;
-//             } else {
-//               console.log('Please enter id');
-//               return false;
-//             }
-//           }
-//       },
-//       {
-//         type: 'input',
-//         name: 'email',
-//         message: 'What is the employee email?',
-//         validate: descriptionInput => {
-//             if (descriptionInput) {
-//               return true;
-//             } else {
-//               console.log('Please enter email');
-//               return false;
-//             }
-//           }
-//       }
-//   };
 
+const makeEngineer = function() {
 
+    return inquirer.prompt([
+      {
+        type: 'input',
+        name: 'name',
+        message: 'What is the employee name?',
+        validate: descriptionInput => {
+            if (descriptionInput) {
+              return true;
+            } else {
+              console.log('Please enter name');
+              return false;
+            }
+          }
+      },
+      {
+        type: 'input',
+        name: 'id',
+        message: 'What is the employee ID?',
+        validate: descriptionInput => {
+            if (descriptionInput) {
+              return true;
+            } else {
+              console.log('Please enter id');
+              return false;
+            }
+          }
+      },
+      {
+        type: 'input',
+        name: 'email',
+        message: 'What is the employee email?',
+        validate: descriptionInput => {
+            if (descriptionInput) {
+              return true;
+            } else {
+              console.log('Please enter email');
+              return false;
+            }
+          }
+      },
+      {
+        type: 'input',
+        name: 'github',
+        message: 'What is the employee github?',
+        validate: descriptionInput => {
+            if (descriptionInput) {
+              return true;
+            } else {
+              console.log('Please enter github');
+              return false;
+            }
+          }
+      }
+    ])
+    .then(({name,id,email,github}) => {
+        this.engineer = new Engineer(name,id,email,github)
+        console.log(this.engineer)
+        //push
+        //prompt want to make anothr employee?
+        finishToPage()
+    }) 
+  };
+
+  const makeEmployee = function() {
+    //ask for employee job
+        inquirer
+            .prompt({
+                type: 'checkbox',
+                name: 'role',
+                message: 'What is the employee role?',
+                choices: ['Manager', 'Intern', 'Engineer'],
+                validate: descriptionInput => {
+                    if (descriptionInput) {
+                      return true;
+                    } else {
+                      console.log('Please enter role');
+                      return false;
+                    }
+                  }
+    
+            })
+            //destructure name for responseto insert into code
+            //NOTE!!! below I have to use => because .then(function({name}) would create a new scope so the current enemy consol log wont work
+            .then(({role}) => {
+                if (role === 'Manager') {
+                       console.log('you selected manager')        
+                }
+                else if (role === 'Intern'){
+                    console.log('you selected intern')
+                }
+                else {
+                    console.log('you selected engineer')
+                    makeEngineer()
+                }
+            })
+            //test object creation      
+    
+    }
 
 makeEmployee()
 //   .then((data) => {
