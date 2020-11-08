@@ -13,6 +13,6 @@ test('create a manager object', () =>{
 
 test('office number added', () => {
     let manager = new Manager('Dan','119','dan@test','100')
-    expect(manager.officeNumber).toBeDefined()
+    expect(manager.officeNumber).toBeDefined()// keeping test in for notes: toBeDefined makes sure that information is coming through
 }
 )
