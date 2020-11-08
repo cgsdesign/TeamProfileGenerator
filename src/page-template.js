@@ -1,22 +1,23 @@
-
 // create teams section
 const generateTeam = teamArr => {
   console.log('generateTeam called')
   return `
-    <section class="my-3" id="portfolio">
-      <h2 class="text-dark bg-primary p-2 display-inline-block">Work</h2>
-      <div class="flex-row justify-space-between">
+      <div class="flex-row justify-space-around">
       ${teamArr
         .filter(({ Manager }) => Manager)
         .map(({ name, id, email, officeNumber }) => {
           return `
-          <div class="col-12 col-md-3 mb-2 bg-dark text-light p-3 flex-column">
-            <h3 class="portfolio-item-title text-light">Team Manager: ${name}</h3>
-            <p> id: ${id} </p>
-            <br>
-            <p> email: ${email} </p>
-            <br>
-            <p> office number: ${officeNumber}</p>
+          <div class="col-md-3 card">
+            <div class="card-header">
+              <h3><b>Team Manager:</b> ${name}</h3>
+            </div>
+            <div class="card-body">
+              <p> <b>id:</b> ${id} </p>
+              <br>
+              <p> <b>email:</b> <a href="mailto:${email}">${email}</a> </p>
+              <br>
+              <p> <b>office number:</b> ${officeNumber}</p>
+            </div>
           </div>
         `;
         })
@@ -27,13 +28,17 @@ const generateTeam = teamArr => {
         .map(({ name, id, email, github }) => {
           console.log('engineer');
           return `
-          <div class="col-12 col-md-3 mb-2 bg-dark text-light p-3 flex-column">
-            <h3 class="portfolio-item-title text-light">Engineer: ${name}</h3>
-            <p> id: ${id} </p>
-            <br>
-            <p> email: ${email} </p>
-            <br>
-            <p> github: ${github}</p>
+          <div class="col-md-3 card">
+            <div class="card-header">
+              <h3><b>Engineer:</b> ${name}</h3>
+            </div>
+            <div class="card-body">
+              <p> <b>id:</b> ${id} </p>
+              <br>
+              <p> <b>email:</b> <a href="mailto:${email}">${email}</a> </p>
+              <br>
+              <p> <b>github:</b> <a href="${github}" target="_blank">${github} </a></p>
+            </div>
           </div>
         `;
         })
@@ -44,20 +49,23 @@ const generateTeam = teamArr => {
         .map(({ name, id, email, school }) => {
           console.log('intern');
           return `
-          <div class="col-12 col-md-3 mb-2 bg-dark text-light p-3 flex-column">
-            <h3 class="portfolio-item-title text-light">Intern: ${name}</h3>
-            <p> id: ${id} </p>
-            <br>
-            <p> email: ${email} </p>
-            <br>
-            <p> school: ${school}</p>
-          </div>
+            <div class="col-md-3 card">
+              <div class="card-header">
+                <h3><b>Intern:</b> ${name}</h3>
+              </div>
+              <div class="card-body">
+                <p> <b>id:</b> ${id} </p>
+                <br>
+                <p> <b>email:</b> <a href="mailto:${email}"> ${email}</a> </p>
+                <br>
+                <p> <b>school:</b> ${school}</p>
+              </div>
+            </div>
         `;
         })
         .join('')}  
     
       </div>
-    </section>
   `;
 };
 
@@ -81,11 +89,11 @@ const generatePage = (templateData) => {
   
   <body>
     <header>
-      <div class="container flex-row py-3">
-        <h1 class="page-title text-secondary bg-dark py-2 px-3">Project Team</h1>
+      <div class="container flex-row">
+        <h1 class="page-title text-secondary px-3">Project Team</h1>
       </div>
     </header>
-    <main class="container my-5">
+    <main class="container ">
       ${generateTeam(templateData)}
     </main>
   </body>

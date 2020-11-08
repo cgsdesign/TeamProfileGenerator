@@ -8,6 +8,6 @@ expect(engineer.name).toBe('Dan')
 
 test('github is entered to engineer', () => {
 let engineer = new Engineer('Dan','2345','d@a', 'gitdreams')
-expect(engineer.github).toBeDefined()
+expect(engineer.github).toBe('gitdreams')
 }
 )

@@ -178,13 +178,14 @@ const makeEngineer = function() {
             //NOTE!!! below used => because .then(function({name}) would create a new scope so the current enemy consol log wont work
             .then(({role}) => {
 
-                if (role === 'Intern'){
+                if (role == 'Intern'){
                     console.log('you selected intern')
                     makeIntern()
+                    return
                 }
                 else {
                     console.log('you selected engineer')
-                    makeIntern()
+                    makeEngineer()
                 }
             }) 
     }
@@ -281,8 +282,6 @@ const makeEngineer = function() {
             finishToPage()
         }) 
       };
-    
-    
     
 makeManager()
 //   .then((data) => {
