@@ -6,8 +6,8 @@ const Manager = require('../lib/Manager.js')//import employee
 test('create a manager object', () =>{
     let manager = new Manager('Dan','1192', "cat@email","manager",'234453456')
     expect(manager.name).toBe('Dan')
-    expect(manager.id).toBeDefined()
-    expect(manager.email).toBeDefined()
+    expect(manager.id).toBe('1192')
+    expect(manager.email).toBe("cat@email")
 
     })
 

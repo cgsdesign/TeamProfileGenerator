@@ -3,7 +3,10 @@ const { TestScheduler } = require('jest')
 
 test('import employees to intern', () => {
     let intern = new Intern('Vie', '2456', 'v@hotmail', 'WashU')
-    expect(intern.name).toBeDefined()
+    expect(intern.name).toBe('Vie')
+    expect(intern.id).toBe('2456')
+    expect(intern.email).toBe('v@hotmail')
+
 }
 )
 
