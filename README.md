@@ -20,7 +20,7 @@ Download files from [this github repo](https://github.com/cgsdesign/TeamProfileG
 
 ## Usage
 To view a walkthough on how to use the app, click below for a video walkthough. 
-* [Video Walkthough](https://drive.google.com/file/d/1JJZy2TAIAuv-Q4s3gQm_ytEfFu1IW5ZZ/preview)
+* [Video Walkthough](https://drive.google.com/file/d/1JJZy2TAIAuv-Q4s3gQm_ytEfFu1IW5ZZ/view)
 ### Example image of final output HTML:
 ![Team Profile Generator Example](dist/ExampleOutput.png)
 
