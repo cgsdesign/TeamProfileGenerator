@@ -1,5 +1,5 @@
 
-# Team Profile Generator - for HR 
+# Team Profile Generator
 ![license](https://img.shields.io/badge/MIT-License-brightgreen)
 
 ## Description 
