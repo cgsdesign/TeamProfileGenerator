@@ -20,7 +20,7 @@ Download files from [this github repo](https://github.com/cgsdesign/TeamProfileG
 
 ## Usage 
 To view a walkthough on how to use the app, Please click below for a video walkthough. 
-* [Video Walkthough](https://drive.google.com/file/d/184ECRDTNedUGJl9HAaFrsHDrv7i0RaDR/preview")
+* [Video Walkthough](https://drive.google.com/file/d/1eO0BI3HCIemE0L6Hk2LB-x7elGdXN6lf/preview)
 
 ## Credits
 * Inquirer Copyright (c) 2012 Simon Boudrias

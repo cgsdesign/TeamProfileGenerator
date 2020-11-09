@@ -89,10 +89,10 @@ const generatePage = (templateData) => {
   <body>
     <header>
       <div class="container flex-row">
-        <h1 class="page-title text-secondary px-3">Project Team</h1>
+        <h1 class="page-title">Project Team</h1>
       </div>
     </header>
-    <main class="container ">
+    <main class="container">
       ${generateTeam(templateData)}
     </main>
   </body>

@@ -98,7 +98,7 @@ const makeEngineer = function() {
       {
         type: 'input',
         name: 'name',
-        message: 'What is the employee name?',
+        message: 'What is the engineer name?',
         validate: descriptionInput => {
             if (descriptionInput) {
               return true;
@@ -206,8 +206,6 @@ const makeEngineer = function() {
                 return
             }
             else{
-                console.log ("page is generating")
-                console.log (teamARR)
                 copyFile(writeFile(generatePage(teamARR)))//Note, make more modular if have time using promises
                 console.log('_______________________________________________________')
                 console.log('file should be written')
@@ -275,7 +273,6 @@ const makeEngineer = function() {
         ])
         .then(({name,id,email,officeNumber}) => {
             let manager = new Manager(name,id,email,officeNumber)
-            console.log(manager)
             teamARR.push(manager)//push employee to array
             //prompt want to make another employee?
             finishToPage()
