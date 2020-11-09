@@ -7,8 +7,8 @@
 For this project I worked in JS using Node.js to create a deployment ready HTML file to display drop teams based off of command line inputs. This project utilized Jest testing and  OOP structuring, as well as inquire for prompting user feedback.
 
 ## Key Features
-responsive design
-fully command line driven 
+* responsive design
+* fully command line driven 
 * manager, engineer, and intern employee data prompted using inquire
 * name, email, id, and job specific data prompted and collected
 * appropriate data including emails and URLs linked on generated HTML page
@@ -31,7 +31,7 @@ CSS class structure based on https://cdnjs.cloudflare.com/ajax/libs/font-awesome
 
 ## <a name="badge">Badges</a>
 
-![badge](https://img.shields.io/badge/JavaScript-Primary Language-orange)
+![badge](https://img.shields.io/badge/JavaScript-PrimaryLanguage-orange)
 ![badge](https://img.shields.io/badge/Node.js-Interface-red)
 ![badge](https://img.shields.io/badge/Inquire-Prompts-red)
 ![badge](https://img.shields.io/badge/Inquire-Testing-red)
