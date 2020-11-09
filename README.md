@@ -18,9 +18,11 @@ For this project I worked in JS using Node.js to create a deployment ready HTML 
 ## Installation
 Download files from [this github repo](https://github.com/cgsdesign/TeamProfileGenerator). Then, in your command line, go into the main README-Gen folder and type node index.js. The file will automatically run.
 
-## Usage 
-To view a walkthough on how to use the app, Please click below for a video walkthough. 
+## Usage
+To view a walkthough on how to use the app, click below for a video walkthough. 
 * [Video Walkthough](https://drive.google.com/file/d/1JJZy2TAIAuv-Q4s3gQm_ytEfFu1IW5ZZ/preview)
+### Example image of final output HTML:
+![Team Profile Generator Example](dist/ExampleOutput.png)
 
 ## Credits
 * Inquirer Copyright (c) 2012 Simon Boudrias
