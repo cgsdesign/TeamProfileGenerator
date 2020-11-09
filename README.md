@@ -20,7 +20,7 @@ Download files from [this github repo](https://github.com/cgsdesign/TeamProfileG
 
 ## Usage 
 To view a walkthough on how to use the app, Please click below for a video walkthough. 
-* [Video Walkthough](https://drive.google.com/file/d/1CskHt9y--WBIyhQ3ZS0qlPecK8tQyu-Q/view)
+* [Video Walkthough](https://drive.google.com/file/d/184ECRDTNedUGJl9HAaFrsHDrv7i0RaDR/preview")
 
 ## Credits
 * Inquirer Copyright (c) 2012 Simon Boudrias
@@ -43,6 +43,6 @@ To view a walkthough on how to use the app, Please click below for a video walkt
 *  node index.js
 
 ## <a name="questions">Questions</a>
-###contact me at: 
-* github: [https://github.com/cgsdesign/README-Gen](https://github.com/cgsdesign/README-Gen)
+### contact me at: 
+* github: [https://github.com/cgsdesign](https://github.com/cgsdesign)
 * email: [cgsdesignmadison@gmail.com](cgsdesignmadison@gmail.com)
