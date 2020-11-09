@@ -23,8 +23,8 @@ To view a walkthough on how to use the app, Please click below for a video walkt
 * [Video Walkthough](https://drive.google.com/file/d/1CskHt9y--WBIyhQ3ZS0qlPecK8tQyu-Q/view)
 
 ## Credits
-Inquirer Copyright (c) 2012 Simon Boudrias
-CSS class structure based on https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css 
+* Inquirer Copyright (c) 2012 Simon Boudrias
+* CSS class structure based on https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css 
 
 ## License
 * MIT
@@ -32,9 +32,9 @@ CSS class structure based on https://cdnjs.cloudflare.com/ajax/libs/font-awesome
 ## <a name="badge">Badges</a>
 
 ![badge](https://img.shields.io/badge/JavaScript-PrimaryLanguage-orange)
-![badge](https://img.shields.io/badge/Node.js-Interface-red)
-![badge](https://img.shields.io/badge/Inquire-Prompts-red)
-![badge](https://img.shields.io/badge/Inquire-Testing-red)
+![badge](https://img.shields.io/badge/Node.js-Interface-brightgreen)
+![badge](https://img.shields.io/badge/Inquire-Prompts-brightgreen)
+![badge](https://img.shields.io/badge/Inquire-Testing-brightgreen)
 
 ## <a name="contributing">Contributing Information</a>
 * [Contributor Covenant](https://www.contributor-covenant.org/)
